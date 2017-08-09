@@ -13,6 +13,7 @@ function draw(Id) {
     context.lineWidth = 2;
     context.stroke();
 }
+//add by yanchao on 20170809
 function drawCircle(id) {
     var canvas1 = document.getElementById(id);
     var context1 = canvas1.getContext('2d');
