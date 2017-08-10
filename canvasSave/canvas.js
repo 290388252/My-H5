@@ -7,5 +7,5 @@ function draw(id) {
     var context = canvas.getContext('2d');
     context.fillStyle = 'gray';
     context.fillRect(0,0,450,350);
-    window.location = canvas.toDataURL('image/jpeg');
+    window.location = canvas.toDataURL('image/jpeg');//好烦啊
 }
