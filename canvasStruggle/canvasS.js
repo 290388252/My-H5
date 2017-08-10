@@ -3,7 +3,7 @@
  * Created by chao on 2017/8/8.
  */
 function draw(Id) {
-    var canvas = document.getElementById(Id);
+    var canvas = document.getElementById(Id);//ok
     var context = canvas.getContext('2d');
     context.fillStyle = "red";
     context.fillRect(0,0,400,300);
