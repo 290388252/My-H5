@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<br>
+<audio controls="controls" src="MP3.mp3" autoplay = "autoplay">您的浏览器不支持audio</audio>
+<!--poster="xxx.jpg"元素放图片-->
+<br>
+<video height="500" width="500" controls="controls" preload="auto">
+<!--loop="loop"循环播放-->
+    <!--各种格式-->
+    <source src="video.m4v" type="video/mp4">
+    <source src="video.ogv" type="video/webm">
+    <source src="video.webm" type="video/ogg">
+    <source src="video.mp4" >
+</video>
+</br>
+<video id="video" src="video.mp4"></video>
+<script type="text/javascript">
+    var video = document.getElementById('video');
+    video.addEventListener("error",function () {
+        var error = video.error;//
+//        var networkstate = video.networkstate;//  网络当前状态
+        switch (error.code){
+            case 1:
+                alert("取回过程被用户终止");
+            case 2:
+                alert("当下载时发生错误");
+            case 3:
+                alert("当解码时发生错误");
+            case 4:
+                alert("媒体不可用或者不支持音频视频");
+             break;
+        }
+    },false);
+</script>
+</body>
+</html>

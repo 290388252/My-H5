@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://E://MyH5/MyH5.iml" filepath="E://MyH5/MyH5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/My-H5.iml" filepath="$PROJECT_DIR$/My-H5.iml" />
     </modules>
   </component>
 </project>
