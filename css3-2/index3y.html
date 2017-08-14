@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            list-style: none;
+        }
+        li:first-child{
+            background-color: #126fb0;
+        }
+        li:last-child{
+            background: black;
+        }
+        /*nth-child(2)正数第二个黑色*/
+        li:nth-child(2){
+            background: black;
+        }
+        /*nth-child(odd)正数奇数白色*/
+        /*nth-last-child(odd)倒数奇数白色*/
+        li:nth-child(odd){
+        background: white;
+        }
+        /*nth-child(even)正数偶数黑色*/
+        /*nth-last-child(even)倒数奇数黑色*/
+        /*
+         <!--<h2>标题</h2>-->
+        <!--<p>内容</p>-->
+        <!--<h2>标题</h2>-->
+        <!--<p>内容</p>-->
+        <!--<h2>标题</h2>-->
+        <!--<p>内容</p>-->
+        如果是这样的话想要第一个h2奇数，第二个h2偶数的话就要用nth-of-type()
+        否则用nth-child就会第一行奇数第二行偶数
+        同理nth-last-of-type()
+        */
+        li:nth-child(even){
+        background: #ff6600;
+        }
+        /*每三次循环一次，第一个蓝第二个红第三黄，以此类推*/
+        /*li:nth-child(3n+1){蓝}*/
+        /*li:nth-child(3n+2){红}*/
+        /*li:nth-child(3n+3){黄}*/
+    </style>
+</head>
+<body>
+<h1>选择器first-child、last-child、nth-child和nth-last-child</h1>
+<ul>
+    <li>11111111111111111111111</li>
+    <li>11111111111111111111111</li>
+    <li>11111111111111111111111</li>
+    <li>11111111111111111111111</li>
+    <li>11111111111111111111111</li>
+    <li>11111111111111111111111</li>
+    <li>11111111111111111111111</li>
+    <li>11111111111111111111111</li>
+</ul>
+</body>
+</html>
