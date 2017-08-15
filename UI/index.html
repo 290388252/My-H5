@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input[type='text']:hover{
+            background: #126fb0;
+        }
+        /*input[type='password']:hover{*/
+            /*background: #b01e73;*/
+        /*}*/
+        /*input[type='password']:focus{*/
+            /*background: #b01e73;*/
+        /*}*/
+        input[type='password']:active{
+            background: #b01e73;
+        }
+        input[type='text']:disabled{
+            background: rgba(1, 0, 1, 0.26);
+        }
+        /*还有一个read-write*/
+        input[type='text']:read-only{
+            background: rgba(127, 108, 223, 0.6);
+        }
+    </style>
+</head>
+<body>
+<form>
+    姓名：<input type="text" placeholder="请输入姓名" enabled>
+    <br/>
+    <br/>
+    姓名1：<input type="text" placeholder="请输入姓名" disabled>
+    <br/>
+    <br/>
+    姓名2：<input type="text" value="hahaa" readonly>
+    <br/>
+    <br/>
+    密码：<input type="password" placeholder="请输入密码">
+</form>
+
+</body>
+</html>

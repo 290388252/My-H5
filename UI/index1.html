@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*<!-- default 默认-->*/
+        input[type='checkbox']:checked{
+            outline: 2px solid green;
+        }
+        input[type='radio']:indeterminate{
+            outline: 2px solid green;
+        }
+        ::selection{
+            color: #b01e73;
+        }
+        input[type='email']:invalid{
+            color: red;
+        }
+        input[type='email']:valid{
+            color: green;
+        }
+        input[type='text']:required{
+            background: red;
+            color: red;
+        }
+        input[type="text"]:optional{
+            background: green;
+            color: #ffffff;
+        }
+        input[type="number"]:in-range{
+            color: #ffffff;
+            background: green;
+
+        }
+        input[type="number"]:out-of-range{
+            background: red;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<h1>11111111111111111111111111111111111111111111111</h1>
+<br/>
+<form>
+    房屋状态：
+    <input type="checkbox" checked>水
+    <input type="checkbox">电
+    <input type="checkbox">气
+</form>
+<br/>
+<br/>
+<form>
+    MALE<input type="radio" name="1">
+    FEMALE<input type="radio" name="1">
+</form>
+<br/>
+<br/>
+<form>
+    email<input type="email" >
+    text<input type="text" >
+</form>
+<br/>
+<br/>
+<form>
+    A<input type="text" required>
+    B<input type="text" >
+</form>
+<br/>
+<br/>
+<input type="number" min="0" max="100" value="0">
+</body>
+</html>
