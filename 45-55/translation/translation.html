@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.a{
+            margin: 50px;
+            background-color: #000;
+            width: 200px;
+            height:200px;
+            /*-ms-transform: rotate(45deg);!*IE9*!*/
+            /*-moz-transform: rotate(45deg);!*火狐*!*/
+            /*-webkit-transform: rotate(45deg);!*Safari Chrome*!*/
+            /*-o-transform: rotate(45deg);!*Opera*!*/
+        }
+        div.a:hover{
+
+            -ms-transform: translate(10px ,10px);/*IE9*/
+            -moz-transform: translate(10px ,10px);/*火狐*/
+            -webkit-transform: translate(10px ,10px);/*Safari Chrome*/
+            -o-transform: translate(10px ,10px);/*Opera*/
+        }
+        div.b{
+            margin: 100px;
+            background-color: #000;
+            width: 20px;
+            height:20px;
+            -ms-transform: scale(10,10);/*IE9*/
+            -moz-transform: scale(10,10);/*火狐*/
+            -webkit-transform: scale(10,10);/*Safari Chrome*/
+            -o-transform: scale(10,10);/*Opera*/
+        }
+        div.b:hover{
+            /*transform-origin: ;旋转起点*/
+            -ms-transform: skew(10deg,10deg);/*IE9*/
+            -moz-transform: skew(10deg,10deg);/*火狐*/
+            -webkit-transform: skew(10deg,10deg);/*Safari Chrome*/
+            -o-transform: skew(10deg,10deg);/*Opera*/
+        }
+    </style>
+</head>
+<body>
+<div class="a">
+
+</div>
+<br/>
+<br/>
+<div class="b">
+
+</div>
+</body>
+</html>

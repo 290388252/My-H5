@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.a{
+            width: 100px;
+            height:100px;
+            background-color: #126fb0;
+            overflow-y: scroll;
+            /*几种overflow overflow-x overflow-y试下*/
+        }
+        div.b{
+            overflow: hidden;
+            white-space: nowrap;
+            width: 200px;
+            height: 20px;
+            border: solid 3px green;
+            text-overflow: ellipsis;
+        }
+        div.c{
+            width: 200px;
+            height: 200px;
+            background-color: #126fb0;
+            box-shadow: 4px 4px 1px rgba(1, 1, 1, 0.62);
+        }
+        div.d{
+            width: 200px;
+            padding: 30px;
+            border: solid 30px green;
+            margin: 20px auto;
+            background-color: #126fb0;
+            box-sizing: border-box;
+        }
+        div.e{
+            width: 200px;
+            padding: 30px;
+            border: solid 30px green;
+            margin: 20px auto;
+            background-color: #126fb0;
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+<body>
+<div class="a">奥创本身就是一种人工智能，他是由汉克皮姆博士（漫画中的蚁人）创造出来的，所以皮姆博士可以说就是奥创的父亲。</div>
+<br/>
+<br/>
+<div class="b">奥创本身就是一种人工智能，他是由汉克皮姆博士（漫画中的蚁人）创造出来的，所以皮姆博士可以说就是奥创的父亲。</div>
+<br/>
+<br/>
+<div class="c">
+
+</div>
+<div class="d">如果少了text-overflow:ellipsis;多余的文字会被裁切掉,就相当于你这样定义text-overflow:clip.如果容器是table,当文字内容过多时,不换行,而是出现..</div>
+
+<div class="e">如果少了text-overflow:ellipsis;多余的文字会被裁切掉,就相当于你这样定义text-overflow:clip.如果容器是table,当文字内容过多时,不换行,而是出现..</div>
+</body>
+</html>

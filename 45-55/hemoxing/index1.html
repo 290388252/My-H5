@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a{
+            color: white;
+            text-decoration: none;
+
+        }
+        li{
+            /*display: inline-block; 可以替换list-style 和 float效果*/
+            list-style: none;
+            float: left;
+            background-color: #126fb0;
+            width: 200px;
+        }
+        table{
+            display: inline-table;
+            border: solid 3px black;
+        }
+        td{
+            border: solid 1px black;
+        }
+        div#a{
+            width: 500px;
+            height: 500px;
+            background-color: #126fb0;
+        }
+        div#b{
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+        }
+        div#a:hover div#b{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="index1.html">ABC</a></li>
+    <li><a href="index1.html">ABC</a></li>
+    <li><a href="index1.html">ABC</a></li>
+    <li><a href="index1.html">ABC</a></li>
+    <li><a href="index1.html">ABC</a></li>
+    <li><a href="index1.html">ABC</a></li>
+</ul>
+<br/>
+<br/>
+1111111111111111111111111111
+<table>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+</table>
+1111111111111111111111111111
+<br/>
+<br/>
+<div id="a">
+    <div id="b"></div>
+</div>
+</body>
+</html>
