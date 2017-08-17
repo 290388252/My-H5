@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            linear	规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。
+            ease	规定慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）。
+            ease-in	规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。
+            ease-out	规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。
+            ease-in-out	规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。
+            cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值。*/
+      div.a{
+          box-shadow: 4px 4px 1px gray;
+          width:200px;
+          height:200px;
+          background-color: #126fb0;
+          transition: background-color 1s linear 0s , width 1s linear 0s;
+          -ms-transition: background-color 1s linear 0s , width 1s linear 0s;/*IE9*/
+          -moz-transition: background-color 1s linear 0s , width 1s linear 0s;/*火狐*/
+          -webkit-transition: background-color 1s linear 0s , width 1s linear 0s;/*Safari Chrome*/
+          -o-transition: background-color 1s linear 0s , width 1s linear 0s;/*Opera*/
+
+      }
+        div.a:hover{
+            width: 400px;
+            background-color: #b01e73;
+        }
+        /*
+            animation-name	指定要绑定到选择器的关键帧的名称
+            animation-duration	动画指定需要多少秒或毫秒完成
+            animation-timing-function	设置动画将如何完成一个周期
+            animation-delay	设置动画在启动前的延迟间隔。
+            animation-iteration-count	定义动画的播放次数。
+            animation-direction	指定是否应该轮流反向播放动画。
+            animation-fill-mode	规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。
+            animation-play-state	指定动画是否正在运行或已暂停。
+            initial	设置属性为其默认值。 阅读关于 initial的介绍。
+            inherit	从父元素继承属性。 阅读关于 initinherital的介绍。*/
+        @-o-keyframes myColor {
+            0%{background-color: #ff1b00;}
+            20%{background-color: #ff6600;}
+            40%{background-color: #ffff00;}
+            60%{background-color: #ffffff;}
+            80%{background-color: #ffff00;}
+            100%{background-color: #b3d4fc;}
+        }
+        @-moz-keyframes myColor {
+            0%{background-color: #ff1b00;}
+            20%{background-color: #ff6600;}
+            40%{background-color: #ffff00;}
+            60%{background-color: #ffffff;}
+            80%{background-color: #ffff00;}
+            100%{background-color: #b3d4fc;}
+        }
+        @-ms-keyframes myColor {
+            0%{background-color: #ff1b00;}
+            20%{background-color: #ff6600;}
+            40%{background-color: #ffff00;}
+            60%{background-color: #ffffff;}
+            80%{background-color: #ffff00;}
+            100%{background-color: #b3d4fc;}
+        }
+        @-webkit-keyframes myColor {
+            0%{background-color: #ff1b00;}
+            20%{background-color: #ff6600;}
+            40%{background-color: #ffff00;}
+            60%{background-color: #ffffff;}
+            80%{background-color: #ffff00;}
+            100%{background-color: #b3d4fc;}
+        }
+        div.b{
+            box-shadow: 4px 4px 1px gray;
+            width:200px;
+            height:200px;
+            background-color: #126fb0;
+
+        }
+        div.b:hover{
+            animation: myColor 2s linear 0s , width 1s linear 0s;
+            -ms-animation: myColor 2s linear 0s , width 1s linear 0s;/*IE9*/
+            -moz-animation: myColor 2s linear 0s , width 1s linear 0s;/*火狐*/
+            -webkit-animation: myColor 2s linear 0s , width 1s linear 0s;/*Safari Chrome*/
+            -o-animation: myColor 2s linear 0s , width 1s linear 0s;/*Opera*/
+
+        }
+    </style>
+</head>
+<body>
+<div class="a"></div>
+<br/>
+<br/>
+<div class="b"></div>
+</body>
+</html>
