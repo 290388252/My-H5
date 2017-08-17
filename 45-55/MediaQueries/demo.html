@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.conter{
+            margin: auto;
+            width: 960px;
+        }
+        div.left{
+            width: 760px;
+            float: left;
+        }
+        p{
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            line-height:600px;
+            font-size: 30px;
+        }
+        p.left-l{
+            width: 210px;
+            background-color: #126fb0;
+            float: left;
+        }
+        p.left-c{
+            width:550px;
+            background-color: #555555;
+            float: left;
+        }
+        p.right{
+            width:200px;
+            background-color: rebeccapurple;
+            float: right;
+        }
+        @media screen and (min-width: 1270px) {
+            div.conter{
+                width: 1270px;
+            }
+            div.left{
+                width: 960px;
+                float: left;
+            }
+
+            p.left-l{
+                width: 310px;
+
+                float: left;
+            }
+            p.left-c{
+                width:650px;
+
+                float: left;
+            }
+            p.right{
+                width:310px;
+
+                float: right;
+            }
+        }
+
+        @media screen and (min-width: 640px) and (max-width: 1269px){
+            div.conter{
+                width: 640px;
+            }
+            div.left{
+                width: 640px;
+                float: left;
+                margin: 0 auto;
+            }
+            p{
+                line-height: 400px;
+            }
+            p.left-l{
+                width: 200px;
+                margin: 0 ;
+                float: left;
+            }
+            p.left-c{
+                width:440px;
+                margin: 0 ;
+                float: left;
+            }
+            p.right{
+                margin: 0 ;
+                width: 100%;
+                clear: both;
+            }
+        }
+
+        @media screen and (max-width: 639px) {
+            div.conter{
+                width: 639px;
+                margin: 0 ;
+            }
+            div.left{
+                width: 100%;
+                margin: 0 ;
+            }
+
+            p.left-l{
+                width: 100%;
+                margin: 0 ;
+
+            }
+            p.left-c{
+                width: 100%;
+                margin: 0 ;
+            }
+            p.right{
+                width: 100%;
+                margin: 0 ;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="conter">
+    <div class="left">
+        <p class="left-l">left</p>
+        <p class="left-c">center</p>
+    </div>
+    <p class="right">right</p>
+</div>
+</body>
+</html>
