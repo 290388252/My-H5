@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function foo() {
+
+    };
+    foo.prototype.z = 3;
+    var obj = new foo();
+    obj.x = 1;
+    obj.y = 2;
+    console.log(obj.x+obj.y+obj.z);
+    console.log(obj.toString());
+    function a() {
+
+    };
+    a.prototype.one = 1;
+    var num = new a();
+    num.two = 2;
+    num.three = 3;
+    console.log('one' in num);//检测num对象上有没有这个属性，包括继承的属性
+    console.log(num.hasOwnProperty('two'))//检测num对象上有没有这个属性，不包括继承的属性
+    var obj = Object.create({x:1})
+
+    var obj2 = {}
+    Object.defineProperty(obj2,'x',{
+        value:12,//这样下面无法修改值
+//        writable:true //加了这句就可以修改
+//        enumerable :true,//是否可以枚举
+//        configurable:true//是否可以配置
+    })
+//    obj2.x = 122;//没法修改
+    console.log(obj2.x)
+    console.log(Object.getOwnPropertyNames(obj2));
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //对象
+    var obj = {
+        usename : 'yanchao',
+        company : 'manle',
+        'x' : 'x',
+        salary : 111,
+        person : {
+            usename : 'yancha1o',
+            age: 23,
+            addr: 'gz'　　
+        },
+        say:function () {
+            return 'hello'
+        }
+    }
+    console.log(Object.getOwnPropertyNames(obj))
+    for(var p in obj){
+        console.log(p + '\n')
+    }
+    console.log(obj.say())
+    function test(name,age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    var t = new test('chao',23);
+    console.log(t.name + t.age)
+    var obj = {};
+    obj.usename = '123';
+    obj.company = '123';
+    console.log(obj.usename + obj.company)
+
+    function person(name,age,company) {
+        this.name = name;
+        this.age = age;
+        this.company = company;
+        this.info = function () {
+            return this.name + this.age
+        }
+    }
+    var p = new person('y',23,'manle');
+    console.log(p.info());
+    p.info = function () {
+        return this.name;
+    }
+    console.log(p.info());
+</script>
+</body>
+</html>

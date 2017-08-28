@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //对象
+    var obj = {
+        usename : 'yanchao',
+        company : 'manle',
+        'x' : 'x',
+        salary : 111,
+        person : {
+            usename : 'yancha1o',
+            age: 23,
+            addr: 'gz'　　
+        }
+    }
+
+    function test(num1,num2) {
+        this.n1 = num1;
+        this.n2 = num2;
+    }
+
+    var t = new test(5,6);
+    alert(typeof t)
+//创建一个空对象
+    var prototype = Object.create(Object.prototype);
+    var key = 'usename'
+    document.write(obj.person.usename);
+    document.write(obj.person[key]);
+</script>
+</body>
+</html>

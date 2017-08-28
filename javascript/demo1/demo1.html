@@ -13,6 +13,42 @@
     document.write('text' +
         'hello');
 //    \r换行  \n换行  \t代表制表  \'代表'  \"代表“
+
+    function test() {
+        var parmamsNum = arguments.length;
+        var max = 0;
+        for (var i = 0; i <= parmamsNum - 1; i++){
+            if (arguments[i] > max) {
+                max = arguments[i];
+            }
+        }
+        return max;
+    }
+    document.write('<br/>')
+    document.write(test(1,2,3,4,5));
+    document.write('<hr color="red">')
+    function calc(x,y) {
+         x()+y();
+    }
+    function text1() {
+        return 3;
+    }
+    function text2() {
+        return 4;
+    }
+    alert(calc(text1,text2));
+    function cheng2(a,b) {
+        var arr = [];
+        for(i=0;i<2;i++){
+            arr[i] = arguments[i]*2;
+        }
+        return arr;
+    }
+    function addone(a) {
+        return a+1;
+    }
+    document.write('<hr color="red">')
+    document.write('<hr color="red">')
 </script>
 <!--确认框-->
 <a href="javascript:confirm('are you sure')">click</a>

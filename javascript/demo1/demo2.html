@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    function calc(x,y) {
+         return x()+y();
+    }
+    function text1() {
+        return 3;
+    }
+    function text2() {
+        return 4;
+    }
+    alert(calc(function  () {
+        return 4;
+    },function  () {
+        return 4;
+    }))
+
+    function cheng2(a,b,c) {
+        var arr = [];
+        for (i=0; i<3; i++){
+            arr[i] = arguments[i]*2;
+        }
+        return arr;
+    }
+    function jia1(a) {
+        return a + 1;
+    }
+    var arr1 = [];
+    arr1 = cheng2(10,20,30);
+    document.write(arr1);
+    document.write('<hr color="red">')
+    for(i = 0; i<3; i++){
+        arr1[i] = jia1(arr1[i]);
+    }
+    document.write(arr1)
+    document.write('<hr color="red">')
+    function addone(a) {
+        return a+1;
+    }
+    function chen2(a,b,c,callback) {
+        var arr2 = [];
+        for (i=0;i<3;i++){
+            arr2[i] = callback(arguments[i]*2);
+        }
+        return arr2;
+    }
+    document.write(chen2(1,2,3,addone));
+
+//    自调函数
+    (function () {
+        alert('我是一个自调函数')
+    })();
+    (function (a,b) {
+        alert('我是一个带参的自调函数'+(a*b));
+    })(3,4);
+</script>
+<noscript>
+    你的浏览器不支持script
+</noscript>
+</body>
+</html>
