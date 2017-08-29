@@ -36,6 +36,71 @@
 //    obj2.x = 122;//没法修改
     console.log(obj2.x)
     console.log(Object.getOwnPropertyNames(obj2));
+
+
+    var obj3 = {};
+    Object.defineProperty(obj3,'y',{
+        value:13,
+        writable:true,
+        enumerable:true,
+        configurable:true
+    })
+    console.log('obj3-'+obj3.y);
+    obj3.y = 'hello';
+    console.log('obj3-'+obj3.y);
+    delete obj3.y;
+    console.log('obj3-'+obj3.y);
+    var obj4 = {};
+    Object.defineProperty(obj4,'y',{
+         get : function () {
+             return 123;
+         }
+    })
+
+    console.log(obj4.y)
+
+    var obj5 = {}
+    Object.defineProperty(obj5,'x',{
+        value:1,
+        configurable: true,
+        writable:false
+    })
+    console.log(obj5.x)
+    obj5.x = 2;
+    console.log(obj5.x)
+    Object.defineProperty(obj5,'x',{
+        value:2,
+    })
+    console.log(obj5.x)
+    var obj6 ={
+        username:'yanchao',
+        sex:'male',
+        get age(){
+            return 12;
+        },
+        set age(val){
+            console.log('不能修改年龄为'+val)
+        }
+    };
+    console.log(obj6.username);
+    console.log(obj6.sex);
+    console.log(obj6.age);
+    obj6.age = 10;
+    var obj7 ={
+        a:1,
+        b:2,
+        get add(){
+            return this.a+this.b;
+        },
+        set double(val){
+            this.a*=val;
+            this.b*=val;
+        }
+    };
+
+    console.log(obj7.add);
+    obj7.double=2;
+    console.log(obj7.add)
 </script>
 </body>
 </html>

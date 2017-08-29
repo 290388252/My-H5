@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var person = function () {
+
+    };
+    Object.defineProperties(person,{
+        'username':{
+            value:'yanchao',
+            writable:true, //加了这句就可以修改
+            enumerable :true,//是否可以枚举
+            configurable:true//是否可以配置
+        },
+        'age':{
+            value:23,
+            writable:false, //加了这句就可以修改
+            enumerable :true,//是否可以枚举
+            configurable:true//是否可以配置
+        },
+        'sex':{
+            value:'male',
+            writable:false, //加了这句就可以修改
+            enumerable :true,//是否可以枚举
+            configurable:true//是否可以配置
+        },
+        'addr':{
+            value:'gz',
+            writable:true, //加了这句就可以修改
+            enumerable :true,//是否可以枚举
+            configurable:true//是否可以配置
+        }
+    });
+    person.prototype.email ='290388252@qq.com';
+    console.log(''+person.username+person.age+person.sex+person.addr);
+    console.log(Object.getOwnPropertyDescriptor(person,'username' ));
+    console.log(person.prototype.email);
+
+//    function Person(name,height){
+//        this.name=name;this.height=height;
+//    }
+//    Person.prototype.hobby=function(){
+//        return 'watching movies';
+//    }
+//    var boy=new Person('keith',180);
+//    var girl=new Person('rascal',153);
+//    console.log(Person.prototype.hobby());
+    // console.log(girl.name); //'rascal'
+    // console.log(boy.hobby===girl.hobby); //true
+
+
+    var data = {};
+    Object.prototype.a=1;
+    console.log(data.a)
+</script>
+</body>
+</html>
