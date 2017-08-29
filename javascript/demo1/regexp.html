@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var patt = new RegExp('javascript');
+    var res = patt.test('this is a javascript source');
+    console.log(res);
+    patt=/javascript/;
+    res=patt.test('this is javascript show time')
+    console.log(res);
+
+    res=/[java]/.test('this is a lua');
+    res=/[^this is a lua]/.test('this is a lua');//除了abc
+//    res=/[0-9]/.test('this is a lua');
+//    res=/[a-z]/.test('this is a lua');
+    res=/./.test('\n')//false
+    res=/./.test('123')//true
+    res=/w/.test('123')//[a-zA-Z0-9]
+    res=/W/.test('123')//[^a-zA-Z0-9]
+    res=/\s/.test('123')//查找空白字符
+    res=/\S/.test('123')//查找非空白字符
+    res=/\b1/.test('123')//查找单词边界1和3都是边界
+    res=/3\b/.test('123')//查找单词边界1和3都是边界 \b的意思是边界处 大写B就是非边界意思
+    res=/o+/.test('google')//查找单词o字母出现至少两次
+    res=/o*/.test('google')//查找单词o字母出现至少零或者多次
+    res=/o?/.test('google')//查找单词o字母出现至少零或者1次
+    res=/o{2}/.test('google')//查找单词o字母出现{}里数字的次数
+    res=/^g/.test('google')//查找单词是否以g开头
+    res=/g$/.test('google')//查找单词是否以g结尾
+    res=/o(?=g)/.test('google')//查找单词是o后跟着g
+    res=/o(?!e)/.test('google')//查找单词是o后不跟着e
+
+    console.log(res);
+
+    res = /is/.exec('this is a javascript');//查找is出现的位置
+    console.log(res);
+    console.log(res[0]);
+
+    var str = 'this is a test hello world i love you'
+    var patt=/i/ig;///i/后面加个i忽略大小写再加个g全局搜索
+    var arr;
+    while ((arr=patt.exec(str))!==null){
+        var msg = '找到了'+arr[0]+'!';
+        msg+='下一个匹配从'+patt.lastIndex;
+        console.log(msg)
+    }
+
+    var str1 = 'this is a test';
+    res = str1.match(/Is/i);
+    console.log(res);
+    res=str1.match(/Is/ig);
+    console.log(res);
+    res=str1.search(/is/i);
+    console.log(res);
+    var str2 = str1.replace(/is/ig,'a');
+    console.log(str2);
+    var dat = '2017-08-29';
+    res=dat.replace(/(\d{4})-(\d{2})-(\d{2})/,'$2/$3/$1');
+    console.log(res);
+
+    dat='Hee eeLee e'
+    res=dat.replace(/[A-Z]/g,func);
+    function func(match) {
+        return match.toLowerCase();
+    }
+    console.log(res);
+    res=str.split(/\s+/)
+    console.log(res);
+</script>
+</body>
+</html>
