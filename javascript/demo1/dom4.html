@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="test" id="btn1">
+<a href="https://www.baidu.com/" id="my">baidu</a>
+<script type="text/javascript">
+    var btn = document.getElementById('btn1');
+    var handler = function (e) {
+        switch (e.type){
+            case 'click':
+                alert('click!!');
+                break;
+            case 'mouseover':
+                event.target.style.backgroundColor='red';
+                break;
+            case 'mouseout':
+                event.target.style.backgroundColor='blue';
+                break;
+        }
+    };
+    btn.onclick=handler;
+    btn.onmouseover=handler;
+    btn.onmouseout=handler;
+
+    var my = document.getElementById('my');
+    my.onclick = function (e) {
+        e.preventDefault()
+        if (e.cancelable===true){
+            alert('被阻止打开了')
+        }else {
+            alert('qu ba')
+        }
+
+    }
+</script>
+</body>
+</html>

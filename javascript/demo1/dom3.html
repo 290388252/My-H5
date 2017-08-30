@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="EventUtils.js" type="text/javascript"></script>
+</head>
+<body>
+<input type="button" value="test" id="btn1">
+<input type="button" value="test2" id="btn2">
+<input type="button" value="test3" id="btn3">
+<script type="text/javascript">
+var btn1 = document.getElementById('btn1');
+//    btn1.attachEvent('onclick',function () {
+//        alert('yanchao')
+//    })
+//    var handler = function () {
+//        alert('yan')
+//    }
+//btn1.onclick = handler;
+//btn1.attachEvent('onclick',handler);
+
+
+    var btn2 = document.getElementById('btn2');
+    var test = function () {
+        alert('hello')
+    };
+    EventUtils.addHandler(btn2,'click',test);
+    var btn3 = document.getElementById('btn3');
+    var test1 = function () {
+        EventUtils.removeHandler(btn2,'click',test);
+    };
+    EventUtils.addHandler(btn3,'click',test1);
+</script>
+</body>
+</html>
