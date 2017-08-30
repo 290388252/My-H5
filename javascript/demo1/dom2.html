@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="test1" id='btn1' />
+<input type="button" value="test2" id='btn2' />
+<input type="button" value="test3" id='btn3' />
+<div id="box1" style="background: #ABCDEF;width: 300px;height: 300px;">
+    <input type="button" value="test6" id="btn5">
+</div>
+<script type="text/javascript">
+
+//onclick只出现一次alert：我是click2【很正常第一次click事件会被第二次所覆盖】，
+    // 但是addEventListener却可以先后运行，不会被覆盖
+    // 【正如：它允许给一个事件注册多个监听器。在使用DHTML库或者 Mozilla extensions
+    // 这样需要保证能够和其他的库或者差距并存的时候非常有用。
+    var btn1=document.getElementById("btn5");
+    var box1=document.getElementById("box1");
+    btn1.addEventListener('click',function(e){
+        alert('button clicked');
+        var e=e||window.event;
+        if(typeof e.cancelBubble=='undefined'){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble=true;
+        }
+    },false);
+    box1.addEventListener('click',function(){
+        alert('div clicked');
+        if(typeof e.cancelBubble=='undefined'){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble=true;
+        }
+    },false);
+    document.body.addEventListener('click',function(){
+        alert('body clicked');
+        if(typeof e.cancelBubble=='undefined'){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble=true;
+        }
+    },false);
+    document.documentElement.addEventListener('click',function(){
+        alert('html clicked');
+        if(typeof e.cancelBubble=='undefined'){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble=true;
+        }
+    },false);
+    document.addEventListener('click',function(){
+        alert('document clicked');
+        if(typeof e.cancelBubble=='undefined'){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble=true;
+        }
+    },false);
+
+    var btn1=document.getElementById("btn1");
+    btn1.addEventListener('click',function(){
+        alert('a');
+        if(typeof e.cancelBubble=='undefined'){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble=true;
+        }
+    },false);
+    var handler=function(){
+        alert('b');
+        if(typeof e.cancelBubble=='undefined'){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble=true;
+        }
+    }
+    btn1.addEventListener('click',handler,false);
+    btn1.addEventListener('click',function(){
+        alert('c');
+        if(typeof e.cancelBubble=='undefined'){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble=true;
+        }
+},false);
+
+var btn2=document.getElementById("btn2");
+var count=0;
+var handler1=function(){
+    alert(count++);
+    if(count==3){
+        alert('事件被取消了');
+        btn2.removeEventListener('click',handler1,false);
+    }
+    if(typeof e.cancelBubble=='undefined'){
+        e.stopPropagation();
+    }else{
+        e.cancelBubble=true;
+    }
+}
+btn2.addEventListener('click',handler1,false);
+
+
+var btn3=document.getElementById("btn3");
+btn3.addEventListener('click',function(){
+    alert(123);
+    btn3.removeEventListener('click',function(){
+        alert(123);
+    },false);
+    if(typeof e.cancelBubble=='undefined'){
+        e.stopPropagation();
+    }else{
+        e.cancelBubble=true;
+    }
+},false);
+</script>
+
+</body>
+</html>

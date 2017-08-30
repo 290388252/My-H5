@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="test1" onclick="alert('HELLO WORLD')">
+<input type="button" value="test2" onclick="test()">
+<input type="button" value="test3" id="btn1">
+<input type="button" value="test4" id="btn2">
+<input type="button" value="test5" id="btn3">
+<div id="box" style="background: #ABCDEF;width: 300px;height: 300px;">
+    <input type="button" value="test6" id="btn4">
+</div>
+<div id="box1" style="background: #ABCDEF;width: 300px;height: 300px;">
+    <input type="button" value="test6" id="btn5">
+</div>
+<script type="text/javascript">
+    function test() {
+        alert('this is a test');
+    }
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick=function () {
+        alert(this.tagName);
+    }
+    var btn2 = document.getElementById('btn2');
+    btn2.onclick = test;
+    var btn3 = document.getElementById('btn3');
+    btn3.onclick = function (e) {
+//        alert(e);
+//        window.event; //IE
+        var e = e||window.event;
+        alert(e);
+    }
+    var box = document.getElementById('box');
+    box.onclick = function () {
+        alert('div box')
+    }
+    var btn4 = document.getElementById('btn4');
+    btn4.onclick = function () {
+        alert('btn4')
+        //取消冒泡
+        var e = e||window.event;
+//        e.stopPropagation();
+
+        //IE兼容
+//        e.cancelBubble=true;
+        if (e.cancelBubble !==true){
+            e.stopPropagation();
+        }else {
+            e.cancelBubble=true;
+        }
+    }
+    box.onclick=function(){
+        alert('div clicked');
+        var e = e||window.event;
+        if (e.cancelBubble !==true){
+            e.stopPropagation();
+        }else {
+            e.cancelBubble=true;
+        }
+    }
+    document.body.onclick=function(){
+        alert('body clicked');
+        var e = e||window.event;
+        if (e.cancelBubble !==true){
+            e.stopPropagation();
+        }else {
+            e.cancelBubble=true;
+        }
+    }
+    document.documentElement.onclick=function(){
+        alert('html clicked');
+        var e = e||window.event;
+        if (e.cancelBubble !==true){
+            e.stopPropagation();
+        }else {
+            e.cancelBubble=true;
+        }
+    }
+    document.onclick=function(){
+        alert('document clicked');
+        var e = e||window.event;
+        if (e.cancelBubble !==true){
+            e.stopPropagation();
+        }else {
+            e.cancelBubble=true;
+        }
+    }
+//onclick只出现一次alert：我是click2【很正常第一次click事件会被第二次所覆盖】，
+    // 但是addEventListener却可以先后运行，不会被覆盖
+    // 【正如：它允许给一个事件注册多个监听器。在使用DHTML库或者 Mozilla extensions
+    // 这样需要保证能够和其他的库或者差距并存的时候非常有用。
+    var btn1=document.getElementById("btn5");
+    var box1=document.getElementById("box1");
+    btn1.addEventListener('click',function(e){
+        alert('button clicked');
+        var e=e||window.event;
+        if(typeof e.cancelBubble=='undefined'){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble=true;
+        }
+    },false);
+    box1.addEventListener('click',function(){
+        alert('div clicked');
+    },false);
+    document.body.addEventListener('click',function(){
+        alert('body clicked');
+    },false);
+    document.documentElement.addEventListener('click',function(){
+        alert('html clicked');
+    },false);
+    document.addEventListener('click',function(){
+        alert('document clicked');
+    },false);
+
+</script>
+
+</body>
+</html>
