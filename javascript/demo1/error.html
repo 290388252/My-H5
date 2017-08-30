@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var a = 2;
+    try{
+        if (a===0){
+            alert('0 can not be divide')
+        }else {
+            alert(4/a);
+        }
+    }catch (e){
+        alert(e.name+':'+e.message);
+    }finally {
+        alert('I always be read')
+    }
+
+    //自定义错误处理器
+    function myError(msg) {
+        this.name='这是自定义错误处理器';
+        this.message=msg||'默认的自定义错误信息'
+    }
+    myError.prototype=Object.create(Error.prototype);
+    myError.prototype.constructor=myError;
+    try {
+        throw new myError('???');
+    }catch (e){
+        console.log(e.name+':'+e.message);
+    }
+    var a = {x:1};
+    var b = a;
+    b.x=2;
+    console.log(b.x);
+    console.log(a.x);
+    function f(o) {
+        o.x=3;
+    }
+    f(a);
+    console.log(a.x);
+    console.log(b.x);
+</script>
+</body>
+</html>
