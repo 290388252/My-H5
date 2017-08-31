@@ -6,6 +6,7 @@
 </head>
 <body>
 <input type="button" value="test" id="btn1">
+<input type="button" value="test2" id="btn2">
 <a href="https://www.baidu.com/" id="my">baidu</a>
 <script type="text/javascript">
     var btn = document.getElementById('btn1');
@@ -36,6 +37,18 @@
         }
 
     }
+//eventPhase属性，如果是在捕获阶段调用的事件处理程序 值为1
+    //eventPhase属性，如果是在事件处理程序于目标对象上 值为2
+    //eventPhase属性，如果事件冒泡阶段调用事件处理程序 值为3
+    var btn2 = document.getElementById('btn2');
+    btn2.onclick=function (e) {
+        alert(e.eventPhase)
+    }
+    btn2.addEventListener('click',function (e) {
+        alert(e.eventPhase);
+    },false);
+
+
 </script>
 </body>
 </html>

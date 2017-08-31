@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="doAction.php" method="post" onsubmit='return check()'>
+    用户名:<input type="text" name="username" id="username" >用户名只能保护数字字母下划线<br />
+    密码： <input type="password" name="password" id="password" /> 密码不能为空 <br />
+    邮箱： <input type="text" name="email" id="email" />请输入合法邮箱 <br />
+    <input type="submit" value="注册">
+</form>
+<script type="text/javascript">
+    function check() {
+        var username = document.getElementById('username').value;
+        if (!/^[a-zA-Z0-9_]+$/.test(username)){
+            alert('用户名不合法')
+            return false;
+        }
+        var password=document.getElementById("password").value;
+        if(/^[\s\n\t\r]*$/.test(password)){
+            alert('密码不能为空');
+            return false;
+        }
+        var email = document.getElementById('email').value;
+        if (!/^([A-Za-zd]+([-_.][A-Za-zd]+)*@([A-Za-zd]+[-.])+[A-Za-zd]{2,5})+$/.test(email)){
+            alert('邮箱格式错误')
+            return false;
+        }
+        //http://validform.rjboy.cn/ 表单验证插件
+    }
+</script>
+</body>
+</html>

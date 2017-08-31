@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="EventUtils.js"></script>
+</head>
+<body>
+<input type="button" value="text" onclick="foo()" id="btn">
+<input type="button" value="text" id="btn1">
+<p><img src="1.gif" alt="" id='img'/></p>
+<script type="text/javascript">
+    function foo() {
+        var test = document.getElementById('btn');
+        alert(test);
+        alert('hello world');
+    }
+    EventUtils.addHandler(window,'onload',function (event) {
+        alert('test')
+    })
+    var img = document.getElementById('img');
+    EventUtils.addHandler(img,'load',function (e) {
+        event=EventUtils.getEvent(e);
+        alert(EventUtils.getTarget(event).src)
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="EventUtils.js"></script>
+</head>
+<body>
+<input type="button" value="test" id="btn">
+<a href="https://www.baidu.com/" id="my">baidu</a>
+<div id="box1" style="background: #ABCDEF">
+    <input type="button" value="test1" id='btn2' />
+</div>
+
+<script type="text/javascript" >
+    var btn = document.getElementById('btn');
+    EventUtils.addHandler(btn,'click',function (event) {
+        event=EventUtils.getTarget(event);
+        var target = EventUtils.getTarget(event);
+        alert(target.tagName);
+    });
+
+    var link = document.getElementById('my');
+    link.onclick=function (event) {
+        event=EventUtils.getEvent(event);
+        EventUtils.preventDefault(event);
+    };
+    var box1=document.getElementById("box1");
+    var btn2=document.getElementById("btn2");
+    box1.onclick = function (event) {
+        alert('div click')
+    }
+    btn2.onclick=function (event) {
+        alert('button click');
+        event=EventUtils.getEvent(event);
+        EventUtils.stopPropagation(event);
+    }
+    document.body.onclick = function (event) {
+        alert('body click');
+    }
+</script>
+</body>
+</html>
