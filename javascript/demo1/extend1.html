@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    function Shape() {
+        this.name='Shape'
+        this.toString=function () {
+            return this.name
+        }
+    }
+    function TwoDShape() {
+        this.name='2d'
+    }
+    function Triangle() {
+        this.name = name;
+        this.height = height;
+        this.side = side;
+        this.area=function () {
+            return (this.side*this.height)/2
+        }
+    }
+    TwoDShape.prototype=new Shape();
+    Triangle.prototype=new TwoDShape();
+</script>
+</body>
+</html>
