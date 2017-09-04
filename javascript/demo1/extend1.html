@@ -16,8 +16,8 @@
     function TwoDShape() {
         this.name='2d'
     }
-    function Triangle() {
-        this.name = name;
+    function Triangle(side, height) {
+        this.name = 'triangle';
         this.height = height;
         this.side = side;
         this.area=function () {
@@ -26,6 +26,25 @@
     }
     TwoDShape.prototype=new Shape();
     Triangle.prototype=new TwoDShape();
+    TwoDShape.prototype.constructor = TwoDShape;
+    Triangle.prototype.constructor = Triangle;
+
+    var twoDShape = new TwoDShape();
+    var triangle = new Triangle(5,10);
+    console.log(triangle.area());
+    console.log(triangle instanceof Triangle);
+    console.log(triangle instanceof TwoDShape);
+    console.log(triangle instanceof Shape);
+    console.log(Shape.prototype.isPrototypeOf(triangle));
+    console.log(TwoDShape.prototype.isPrototypeOf(triangle));
+    console.log(Triangle.prototype.isPrototypeOf(triangle));
+    console.log(Object.prototype.isPrototypeOf(triangle));
+    console.log(String.prototype.isPrototypeOf(triangle));
+
+    console.log(twoDShape.constructor);
+    console.log(twoDShape.toString())
+
+
 </script>
 </body>
 </html>
