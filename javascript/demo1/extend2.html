@@ -14,6 +14,12 @@
     }
     function TwoDShape() {}
     TwoDShape.prototype = new Shape();
+//    TwoDShape.prototype = Shape.prototype;//效率好点，不new，但是父类就会被更改了
+    //但是可以建一个临时对象解决这样的问题
+//    var F = function () {
+//    }
+//    F.prototype = Shape.prototype;
+//    TwoDShape.prototype = new F();
     TwoDShape.prototype.constructor=TwoDShape;
     TwoDShape.prototype.name = '2D'
     function Triangle(side, height) {

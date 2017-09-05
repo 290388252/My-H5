@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<button>onclick</button>
+<div class="one"></div>
+<div>123</div>
+<div class="two">123</div>
+<div id="three">123</div>
+
+<script
+    src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('button').on('click',function () {
+            alert('hello world');
+            $('div').css('backgroundColor','red');
+        })
+        $('.one').hide(1000).show(1500);
+    })
+</script>
+</body>
+</html>
