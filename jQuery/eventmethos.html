@@ -10,12 +10,26 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('button').dblclick(function () {
-            $('p').text('I was change!')
+            $('p').text('I was change!');
+        })
+        $('.d').bind('click',clickbind);
+        $('.ok').click(function () {
+            var e = jQuery.Event('myEvent');
+            $('.ok').trigger(e);
+        })
+        $('.ok').bind('myEvent',function (event) {
+            alert('myEvent ok')
+            console.log(event)
         })
     })
+    function clickbind() {
+        alert('绑定成功');
+    }
 </script>
 <p>1</p>
 <p>2</p>
 <button>3</button>
+<div class="d" style="width: 200px;height: 200px;background-color: #18b00b;"></div>
+<button class="ok">ok</button>
 </body>
 </html>

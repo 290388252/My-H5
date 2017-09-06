@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $(document).ready(function () {
+//        $('.two').click(function () {
+//            alert('text:'+$('.one').text())
+//        })
+        $('.two').click(function () {
+            alert('text:'+$('.it').val())
+        })
+        $('.two1').click(function () {
+            alert('text:'+$('.aid').attr('href'))
+        })
+        $('.qw').click(function () {
+            $('.pp').text('hello world')
+        })
+        $('.qw1').click(function () {
+            $('.pp1').html('<a href="http://www.baidu.com">百度一下</a>')
+        })
+        $('.qw2').click(function () {
+            $('.it1').val('???')
+        })
+        $('.qw3').click(function () {
+            $('.bid').attr({
+                'href':'http://www.qq.com',
+                'title': 'qq'
+            })
+        })
+        $('.qw4').click(function () {
+            $('.pp2').text(function (i,ot) {
+                return 'old->'+ot+' new->'+(i);
+            })
+        })
+        $('.qw5').click(function () {
+            $('.pp3').append('?')
+            //append后面加入
+            //prepend前面加入
+            //before上一行加入
+            //after下一行加入
+            //remove连同标签一起删除
+            //empty只删除标签内的标签内容
+        })
+        $('.qw6').click(function () {
+            appendText()
+        })
+
+    });
+    function appendText() {
+        var text1 = '<p>hello</p>';
+        var text2 = $('<p></p>').text('>>>>');
+        var text3 = document.createElement('p');
+        text3.innerHTML = '>>>>>2';
+        $('body').append(text1,text2,text3);
+    }
+
+</script>
+<p class="one">lalalalala<a>this is an a</a></p>
+<button class="two">okokok</button>
+<p><input type="text" class="it" value="jikeli"></p>
+<button class="two1">okokok2</button>
+<p><a href="http://www.baidu.com" class="aid"></a></p>
+
+<p class="pp">hello</p>
+<button class="qw">click</button>
+<p class="pp1">hello</p>
+<button class="qw1">click</button>
+
+<input type="text" class="it1" value="hello world">
+<button class="qw2">click</button>
+<br/>
+<a href="http://www.baidu.com" class="bid">bb</a>
+<button class="qw3">click</button>
+
+<br/>
+<p class="pp2">hello</p>
+<button class="qw4">click</button>
+
+<br/>
+<p class="pp3">hello</p>
+<button class="qw5">click</button>
+
+<br/>
+
+<button class="qw6">click</button>
+</body>
+</html>

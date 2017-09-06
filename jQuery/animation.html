@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style type="text/css">
+        div{
+            background-color: #18b00b;
+            width:80px;
+            height:80px;
+            margin: 2px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#hide').click(function () {
+            $('p').hide(1000);
+        });
+        $('#toggle').click(function () {
+            $('p').toggle(1000);
+        });
+
+        $('#fadein').click(function () {
+            $('#d1').fadeIn(1000);
+            $('#d2').fadeIn(1000);
+            $('#d3').fadeIn(1000);
+        })
+        $('#fadeout').click(function () {
+            $('#d4').fadeOut(1000);
+            $('#d5').fadeOut(1000);
+            $('#d6').fadeOut(1000);
+        })
+        $('#slide').click(function () {
+            $('#d7').slideToggle(1000);
+            $('#d8').slideToggle(1000);
+            $('#d9').slideToggle(1000);
+        })
+    });
+    //fadeTo( 1000, 0.33 );透明度
+    //fadeToggle开关
+
+    for(var i = 0;i<=5;i++){
+        $('<div>').appendTo(document.body);
+    }
+    $('div').click(function () {
+        $(this).hide(1000,function () {
+            $(this).remove();
+        });
+
+    })
+
+
+
+</script>
+<p>hello</p>
+<button id="hide">click</button>
+<button id="toggle">隐藏/显示</button>
+<br/>
+<br/>
+<button id="fadein">fadein</button>
+<br/>
+<br/>
+<div id="d1" style="float:left;display:none;width: 80px;height: 80px;background-color: #126fb0"></div>
+<div id="d2" style="float:left;display:none;width: 80px;height: 80px;background-color: #ffff00"></div>
+<div id="d3" style="float:left;display:none;width: 80px;height: 80px;background-color: rebeccapurple"></div>
+<br/>
+<br/>
+<br/>
+<button id="fadeout" style="float: left">fadeout</button>
+<br/>
+<br/>
+<div id="d4" style="float:left;width: 80px;height: 80px;background-color: #126fb0"></div>
+<div id="d5" style="float:left;width: 80px;height: 80px;background-color: #ffff00"></div>
+<div id="d6" style="float:left;width: 80px;height: 80px;background-color: rebeccapurple"></div>
+
+<button id="slide" >slide</button>
+<br/>
+<br/>
+<div id="d7" style=" width: 80px;height: 80px;background-color: #126fb0"></div>
+<div id="d8" style=" width: 80px;height: 80px;background-color: #ffff00"></div>
+<div id="d9" style=" width: 80px;height: 80px;background-color: rebeccapurple"></div>
+</body>
+</html>
