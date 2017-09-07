@@ -7,7 +7,40 @@
 </head>
 <body>
 <script type="text/javascript">
+    $(document).ready(function () {
+        $('#btn').click(function () {
+            $('#result').html('请求数据中,请稍后...');
+            $.get('server.php',{
+                                    name:$('#namevalue').val()
+                                },function (data) {
+                alert('hello');
+                $('#result').html('{ code:'+'请求成功;'+'<br/>'+data+'}')
+            }).error(function () {
+                $('#result').text('服务器异常');
+            })
+        })
+        $('div').text('请求数据中,请稍后...');
+        $('div').load('box.htm',function (a,status,c) {
+//            alert('hello');
+            console.log(status);
+            if (status=='error'){
+                $('div').text('加载失败')
+            }
+        });
+        $.getScript(this).complete(function () {
+            sayHello();
+        })
+    });
 
+    function sayHello() {
+        alert('Hello AJAX');
+    }
 </script>
+<input type="text" id="namevalue">
+<br/>
+<button id="btn">send</button>
+result:<span id="result"></span>
+<br/>
+<div></div>
 </body>
 </html>

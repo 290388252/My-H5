@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style type="text/css">
+        ul,li{
+            list-style: none;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+            padding-left: 20px;
+            padding-top: 3px;
+            display: block;
+            width:80px;
+            color: white;
+        }
+        .main{
+            background-color: #18b00b;
+            width: 100px;
+        }
+
+        .d{
+            background-color: #ABCDEF;
+        }
+        .main ul{
+            display: none;
+
+        }
+        .hmain{
+            background-color: #18b00b;
+            float: left;
+        }
+        .hmain ul{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.main a').click(function () {
+        var ulNode = $(this).next('ul');
+//        if (ulNode.css('display')=='none'){
+//            ulNode.css('display','block');
+//        }else {
+//            ulNode.css('display','none')
+//        }
+        ulNode.toggle(300)
+    })
+    $('.hmain a').hover(function () {
+        var ulNode = $(this).next('ul');
+        ulNode.slideToggle();
+    })
+})
+</script>
+<ul>
+    <li class="main"><a href="#">菜单1</a>
+        <ul class="c">
+            <li class="d"><a href="#">子菜单1</a></li>
+            <li class="d"><a href="#">子菜单2</a></li>
+        </ul>
+    </li>
+    <li class="main"><a href="#">菜单2</a>
+        <ul class="c">
+            <li class="d"><a href="#">子菜单1</a></li>
+            <li class="d"><a href="#">子菜单2</a></li>
+        </ul>
+    </li>
+    <li class="main"><a href="#">菜单3</a>
+        <ul class="c">
+            <li class="d"><a href="#">子菜单1</a></li>
+            <li class="d"><a href="#">子菜单2</a></li>
+        </ul>
+    </li>
+</ul>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<ul>
+    <li class="hmain"><a href="#">菜单1</a>
+        <ul class="c">
+            <li class="d"><a href="#">子菜单1</a></li>
+            <li class="d"><a href="#">子菜单2</a></li>
+        </ul>
+    </li>
+    <li class="hmain"><a href="#">菜单2</a>
+        <ul class="c">
+            <li class="d"><a href="#">子菜单1</a></li>
+            <li class="d"><a href="#">子菜单2</a></li>
+        </ul>
+    </li>
+    <li class="hmain"><a href="#">菜单3</a>
+        <ul class="c">
+            <li class="d"><a href="#">子菜单1</a></li>
+            <li class="d"><a href="#">子菜单2</a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

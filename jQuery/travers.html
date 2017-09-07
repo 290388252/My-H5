@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style type="text/css">
+        #div1{
+            width: 500px;
+            height: 500px;
+            border: 3px solid chocolate;
+        }
+        #div2{
+            width: 300px;
+            height: 300px;
+            margin-top: 10px;
+            margin-left: 10px;
+            border: 3px solid chocolate;
+        }
+        p{
+            margin-left: 10px;
+            margin-top:10px;
+            width: 150px;
+            height: 80px;
+            border: 3px solid #b3d4fc;
+        }
+        h1,h2,h3,h4,h5,h6{
+            border: 3px solid green;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+$(document).ready(function () {
+    //children只向下一级，find可以多级
+    $("#div1").find('a').css( "border", "3px solid red" );
+
+    //同级遍历
+    //sibings()除了所选的元素外都变
+    //next()所选元素下一个元素改变
+    //nextAll()所选元素下一个所有元素改变
+    //prev()所选元素上一个元素改变
+    //preAll()所选元素上一个所有元素改变
+    //preUntil('')所选元素上一个元素到一个元素区间范围的元素改变
+
+    //过滤
+    //first()第一个元素
+    //last()最后一个元素
+    //eq()0代表第一个1代表第二个以此类推
+    //filter('元素')所选元素则可变
+    //not('')与filter相反
+    $('h4').siblings().css("border", "3px solid red");
+})
+</script>
+<div id="div1">div1
+    <div id="div2">div2
+        <p id="div3">
+            <a>
+                hello
+            </a>
+        </p>
+    </div>
+</div>
+<br/>
+<div class="bd">
+    <h1>1</h1>
+    <h2>2</h2>
+    <h3>3</h3>
+    <h4>4</h4>
+    <h5>5</h5>
+</div>
+</body>
+</html>

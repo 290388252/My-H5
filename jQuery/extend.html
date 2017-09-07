@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="myJQuery.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+ var m = jQuery.noConflict();
+ m(document).ready(function () {
+//    $.myjq()
+     m('div').myjq();
+        m('button').click(function () {
+         m('div').text('good');
+    })
+})
+</script>
+<div></div>
+<button>click</button>
+</body>
+</html>
