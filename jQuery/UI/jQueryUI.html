@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../jquery-ui-1.12.1/jquery-ui.css">
+    <style type="text/css">
+        #draggable { background-color : blueviolet;width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+        #droppable { background-color : chartreuse;width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+        #resizable { width: 150px; height: 150px; background-color : blueviolet; }
+        a{
+            width: 100px;
+            height: 20px;
+            text-align:center;
+            vertical-align:middle ;
+        }
+        #selectable li{
+            border: 1px solid gray;
+            list-style: none;
+        }
+        #selectable .ui-selecting { background: #FECA40; }
+        #selectable .ui-selected { background: #F39814; color: white; }
+        #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+        #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#draggable").draggable();
+        $('#droppable').droppable({
+            drop:function (event ,ui) {
+                $(this).addClass("ui-state-highlight" )
+                    .find('p').html('Dropped!')
+            }
+        });
+        $('.aa').button();
+        $( "#resizable" ).resizable();
+        $('ul').selectable();
+        $('.aa').click(function () {
+            if($('.right').hasClass('ui-selected')){
+                alert('congratulation,you are right!');
+            }else {
+                alert('you are wrong!');
+            }
+
+        });
+        $('#sortable').sortable();
+    })
+</script>
+<div id="draggable" class="ui-widget-content">
+    <p>Drag me to my target</p>
+</div>
+
+<div id="droppable" class="ui-widget-header">
+    <p>Drop here</p>
+</div>
+
+<a href="">button</a>
+<br/>
+<br/>
+<br/>
+<ul id="sortable">
+    <li>cao</li>
+    <li>ni</li>
+    <li>ma</li>
+    <li>mai</li>
+    <li>pi</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div id="resizable" class="ui-widget-content">
+
+</div>
+<br/>
+<br/>
+<br/>
+<p>who are you ?</p>
+<ul id="selectable">
+    <li>A</li>
+    <li class="right">A</li>
+    <li>A</li>
+    <li>A</li>
+    <li>A</li>
+</ul>
+<a class="aa">ok</a>
+
+
+</body>
+</html>

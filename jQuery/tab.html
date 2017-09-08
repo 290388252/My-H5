@@ -34,13 +34,68 @@
     .content{
         display: block;
     }
+    .tabsecond{
+        float: left;
+        margin-right: 2px;
+        cursor: pointer;
+        border-bottom: 0;
+    }
+    .tabsecond li.tab2{
+        z-index: 100;
+        border: 1px solid gray;
+        background-color: white;
+        border-bottom: 0;
+        color: #126fb0;
+        position: relative;
+    }
+    .tabsecond li{
+        background-color: white;
+        color: #126fb0;
+        top: 2px;
+    }
+    .contentsecond{
+            width: 500px;
+            height: 200px;
+            padding:20px;
+            clear: left;
+            border: 1px solid gray;
+        }
     </style>
 </head>
 <body>
 <script type="text/javascript">
-
+var timeoutid;
+$(document).ready(function () {
+    $('.tabfirst li').each(function (index) {
+        var liNode = $(this);
+        $(this).mouseover(function () {
+            timeoutid = setTimeout(function () {
+                $('div.content').removeClass('content');
+                $('.tabfirst li.tab1').removeClass('tab1');
+                $('div').eq(index).addClass('content');
+                liNode.addClass('tab1');
+            },300);
+        }).mouseout(function () {
+            clearTimeout(timeoutid);
+        });
+    })
+    $('#realcontent').load('tab1.html');
+    $('.tabsecond li').each(function (index) {
+        $(this).click(function () {
+            $('.tabsecond li.tab2').removeClass('tab2');
+            $(this).addClass('tab2');
+            if (index == 0){
+                $('#realcontent').load('tab1.html');
+            }else if(index ==1){
+                $('#realcontent').load('tab1.html');
+            }else if(index == 2){
+                $('#realcontent').load('tab1.html');
+            }
+        })
+    })
+})
 </script>
-<ul>
+<ul class="tabfirst">
     <li class="tab1">标签1</li>
     <li>标签2</li>
     <li>标签3</li>
@@ -53,6 +108,20 @@
 </div>
 <div class="contentf">
     content3
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<ul class="tabsecond">
+    <li class="tab2">标签1quanbu</li>
+    <li>标签2bufen</li>
+    <li>标签3lalala</li>
+</ul>
+<div class="contentsecond">
+    <div id="realcontent">
+
+    </div>
 </div>
 </body>
 </html>
