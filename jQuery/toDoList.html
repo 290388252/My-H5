@@ -5,51 +5,36 @@
     <title>Title</title>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="../jquery-ui-1.12.1/jquery-ui.css">
-    <script type="text/javascript">
-        var MyTodoList = (function () {
-            var defaults = {
-                todoTask: 'todo-task',
-                todoHeader: 'task-header',
-                todoDate: 'task-date',
-                todoDescription: 'task-description',
-                taskId: 'task-',
-                formId: 'todo-form',
-                dataAttribute: 'data',
-                deleteDiv: 'delete-div'
-            },
-             codes =　{
-               '1':'pending',
-                 '2':'inProgress',
-                 '3':'completed'
-             };
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
 
-            var MyTodoList = function () {
-            };
-            MyTodoList.prototype.generateElement = function (params) {
-                var parent = $(codes[params.code]),
-                    wrapper;
-                if (!parent){return;}
-
-                wrapper = $('<div />' , {
-                    'class':defaults.todoTask,
-                    'id':defaults.taskId + parent.id,
-                    'data':params.id
-                })
-            }
-        })();
-    </script>
     <style type="text/css">
         .task-list{
             background-color: #aaaaaa;
             float: left;
             width: 250px;
-            height: 300px;
+            height: 350px;
             margin: 10px;
             border-radius: 10px;
         }
         h3{
             text-align: center;
+        }
+        input{
+            width: 240px;
+            margin-left: 3px;
+            height: 21px;
+        }
+        textarea{
+            width: 238px;
+            height: 90px;
+            margin-left: 3px;
+        }
+        #delete-div{
+            color: red;
+            background: white;
+            width: 240px;
+            height: 60px;
+            margin : 5px;
         }
     </style>
 </head>
@@ -74,16 +59,67 @@
 <div class="task-list">
     <h3>添加项目</h3>
     <form id="todo-form">
-        <input type="text" placeholder="标题"/>
-        <textarea placeholder="内容"></textarea>
-        <input type="text" placeholder="截止日期(日/月/年)"/>
-        <input type="button" class="btn btn-primary" value="添加项目">
+        <input type="text" placeholder="标题" class="addTitle"/>
+        <textarea placeholder="内容" class="addDescriptions"></textarea>
+        <input type="text" placeholder="截止日期(日/月/年)" id="datepicker" class="addDate"/>
+        <input type="button"  class="btn btn-primary" value="添加项目" id="addItem">
         <input type="button" class="btn btn-primary" value="清空全部项目">
     </form>
-    <div id="delete-div">拖动到这里删除</div>
+    <div id="delete-div" class="hidden">拖动到这里删除</div>
 </div>
 <script type="text/javascript">
+    var MyTodoList = (function () {
+        var defaults = {
+                todoTask: 'todo-task',
+                todoHeader: 'task-header',
+                todoDate: 'task-date',
+                todoDescription: 'task-description',
+                taskId: 'task-',
+                formId: 'todo-form',
+                dataAttribute: 'data',
+                deleteDiv: 'delete-div'
+            },
+            codes =　{
+                '1':'pending',
+                '2':'inProgress',
+                '3':'completed'
+            };
 
+        var MyTodoList = function () {
+            var _this = $(this);
+            $('#datepicker').datepicker();
+            $('#addItem').click(function () {
+                var title = $(this).siblings('.addtitle').val();
+                var descriptions = $(this).siblings('.addDescriptions').val();
+                var date = $(this).siblings('.adddate').val();
+                _this.generateElement({
+                    id: Date.now(),
+                    code: '1',
+                    title: title,
+                    date: date,
+                    descriptions: descriptions
+                });
+            })
+        };
+        MyTodoList.prototype.generateElement = function (params) {
+            var parent = $(codes[params.code]),
+                wrapper;
+            if (!parent){return;}
+
+            wrapper = $('<div />' , {
+                'class':defaults.todoTask,
+                'id':defaults.taskId + parent.id,
+                'data':params.id
+            })
+        }
+        return MyTodoList;
+    })();
+</script>
+<script type="text/javascript">
+$(document).ready(function () {
+      new MyTodoList();
+
+})
 </script>
 </body>
 </html>
