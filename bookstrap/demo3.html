@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style type="text/css">
+        .bs-callout {
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #eee;
+            border-left-width: 5px;
+            border-radius: 3px;
+        }
+        .bs-callout+.bs-callout {
+            margin-top: -5px;
+        }
+        .bs-callout-danger {
+            border-left-color: #ce4844;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <ul class="nav nav-tabs nav-justified">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation"><a href="#">Messages</a></li>
+        </ul>
+        <div class="bs-callout bs-callout-danger" id="callout-navbar-js">
+            <h4>依赖 JavaScript 插件</h4>
+            <p>如果 JavaScript 被禁用，并且视口（viewport）足够窄，致使导航条折叠起来，导航条将不能被打开，<code>.navbar-collapse</code> 内所包含的内容也将不可见。</p>
+            <p>响应式导航条依赖 <a href="../javascript/#collapse">collapse 插件</a>，定制 Bootstrap 的话时候必将其包含。</p>
+        </div>
+    </div>
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Dropdown <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </li>
+    </ul>
+    <br/>
+    <ul class="nav nav-pills nav-stacked">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+
+    <br/>
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="#">Clickable link</a></li>
+        <li role="presentation"><a href="#">Clickable link</a></li>
+        <li role="presentation" class="disabled"><a href="#">Disabled link</a></li>
+    </ul>
+
+</body>
+</html>
