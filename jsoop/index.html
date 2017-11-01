@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+//        var a = {
+//            name : 'yanchao',
+//            work : function () {
+//                console.log('working now')
+//            },
+//            _age : 23,
+//            get age(){
+//                return this._age;
+//            },
+//            set age(val){
+//                return this._age = val;
+//            }
+//        };
+//        console.log(a.work())
+
+//        function Person() {
+//
+//        }
+//        Person.prototype.head = 1;
+//        Person.prototype.eat = function () {
+//            console.log('eating....')
+//        }
+//        function Programmer() {
+//
+//        }
+//        Programmer.prototype = Object.create(Person.prototype);
+//        Programmer.constructor = Programmer;
+//        Programmer.prototype.language = 'JAVA';
+//        Programmer.prototype.work = function () {
+//            console.log('working....')
+//        };
+//
+//        function createEX(child,parent) {
+//            function F() {
+//            }
+//            F.prototype = parent.prototype;
+//            child.prototype = new F();
+//            child.constructor = child;
+//        }
+//function getData(){
+//            alert("返回所有数据");
+//        }
+//        function getDataTop(num){
+//    alert("返回前"+num+"数据");
+//}function getDataLimit(num1,num2){
+//            alert("返回前"+num1+"-"+num2+"数据");
+//        }function getDste(){
+//    var num=arguments.length;
+//    if(!num){  getData();  }
+//    else if(num==1){  getDataTop(arguments[0]);  }
+//    else if(num==2){  getDataLimit(arguments[0],arguments[1]);
+//    }
+//}
+//getDste( )
+//    function Parent() {
+//        this.run = function () {
+//            console.log('prun')
+//        }
+//    }
+//    function Child() {
+//        Parent.call(this);
+//        var Parentrun = this.run;
+//        this.run = function () {
+//            console.log('crun')
+//            Parentrun();
+//        }
+//    }
+    function Parent() {
+
+    }
+    Parent.prototype.run = function () {
+        console.log('prun');
+    }
+    function Child() {
+
+    }
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+    Child.super = Parent.prototype;
+    Child.prototype.run = function () {
+        console.log('crun')
+        Child.super.run();
+    }
+var c = new Child();
+    c.run();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
